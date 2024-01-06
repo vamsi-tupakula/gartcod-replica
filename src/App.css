@@ -90,8 +90,7 @@
   height: 100%;
   width: 100%;
   font-size: 1.7rem;
-  transition: .2s .3s ease-in-out;
-  transition-property: transform;
+  transition: .2s .7s ease-in-out;
   z-index: -1;
 }
 

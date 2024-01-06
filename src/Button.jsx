@@ -6,29 +6,16 @@ function Button({ color }) {
   const cursorRef = useRef();
 
   useEffect(() => {
-    const timeouts = [];
-    const time1 = setTimeout(() => {
+    setTimeout(() => {
       cursorRef.current.style.cssText = `transform: translate(65px, 45px)`;
-      const time2 = setTimeout(() => {
-        cursorRef.current.style.cssText = `transform: translate(65px, 215px)`;
-        const time3 = setTimeout(() => {
-          cursorRef.current.style.cssText = `transform: translate(100vw, -100vh)`;
-        }, 2000);
-        timeouts.push(time3);
-      }, 1500);
-      timeouts.push(time2);
     }, 1000);
-    timeouts.push(time1);
-    const time4 = setTimeout(() => {
+    setTimeout(() => {
+      cursorRef.current.style.cssText = `transform: translate(65px, 215px)`;
       btnRef.current.style.cssText = `transform: translateY(165px)`;
-    }, 2500);
-    timeouts.push(time4);
-
-    return () => {
-      timeouts.map((timeout) => {
-        clearTimeout(timeout);
-      });
-    };
+    }, 3000);
+    setTimeout(() => {
+      cursorRef.current.style.cssText = `transform: translate(100vw, -100vh)`;
+    }, 5000);
   }, []);
   return (
     <>
